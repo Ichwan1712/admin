@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>KedaiTIK - Kedai Kopi Pesantren PeTIK</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <!-- Kogo PeTIK -->
+    <link
+      rel="icon"
+      href="assets/img/kedaitik/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+    <script
+      src="https://kit.fontawesome.com/52d37c124e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" style="background-color: black">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" style="background-color: black">
+            <a href="indexbarista.html">
+              <img
+                src="./kopi(1).jpg"
+                alt="logo"
+                class="logo"
+                width="150px"
+                height="70px"
+              />
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item">
+                <a href="indexbarista.html">
+                  <i class="fa fa-home"></i>
+                  <p class="text-white">Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="produkmenu.html">
+                  <!-- logo dashboard -->
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <p class="text-white">Produk Menu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#">
+                  <!-- logo dashboard -->
+                  <i class="fa-solid fa-bag-shopping"></i>
+                  <p class="text-white">Bahan Baku</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="index.html" id="logout">
+                  <i class="fa fa-sign-out"></i>
+                  <p class="text-white">Logout</p></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo">
+                <img
+                  src="assets/img/kaiadmin/logo_light.svg"
+                  alt="navbar brand"
+                  class="navbar-brand"
+                  height="20"
+                />
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+              <nav
+                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex text-center"
+              >
+                <h4>
+                  <b>Bahan Baku <span style="color: brown">KedaiTIK</span></b>
+                </h4>
+              </nav>
+
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li
+                  class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none"
+                >
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <i class="fa fa-search"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-search animated fadeIn">
+                    <form class="navbar-left navbar-form nav-search">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          placeholder="Search ..."
+                          class="form-control"
+                        />
+                      </div>
+                    </form>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="page-header">
+              <h3 class="fw-bold mb-3">Tambah Bahan Baku</h3>
+              <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                  <a href="index.html"> Home </a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Bahan Baku</a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+              </ul>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title fw-bold text-center">
+                      Tambah Bahan Baku
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="largeInput">Nama Bahan</label>
+                          <input
+                            type="text"
+                            class="form-control form-control"
+                            id="bahan"
+                            onchange="hapusClassBahan()"
+                          />
+                          <div class="invalid-feedback">
+                            Nama Bahan tidak boleh kosong*
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="largeInput">Jumlah</label>
+                          <input
+                            type="text"
+                            class="form-control form-control"
+                            id="jumlah"
+                            onchange="hapusClassJumlah()"
+                          />
+                          <div class="invalid-feedback">
+                            Jumlah tidak boleh kosong*
+                          </div>
+                        </div>
+                        <div class="form-group"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-action">
+                    <button
+                      class="btn btn-success"
+                      type="submit"
+                      id="btnSubmit"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title fw-bold text-center">
+                      List Bahan Baku
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <table class="table table-head-bg-primary table-hover mt-2">
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">Nama Bahan</th>
+                          <th scope="col">Jumlah</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="TabelDataBahan"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+      function hapusClassBahan() {
+        document.getElementById("bahan").classList.remove("is-invalid");
+      }
+
+      function hapusClassJumlah() {
+        document.getElementById("jumlah").classList.remove("is-invalid");
+      }
+      document.getElementById("btnSubmit").addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const nama = document.getElementById("bahan").value.trim();
+        const jumlah = document.getElementById("jumlah").value.trim();
+
+        if (nama && jumlah) {
+          // Tambahkan bahan ke localStorage
+          bahan.tambahBahan({ nama, jumlah });
+
+          // Tampilkan data ke tabel
+          bahan.tampilkanDataTabel("TabelDataBahan");
+
+          // Reset input form
+          document.getElementById("bahan").value = "";
+          document.getElementById("jumlah").value = "";
+
+          // Tampilkan notifikasi
+          Swal.fire({
+            icon: "success",
+            title: "Berhasil",
+            text: "Data berhasil ditambahkan!",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        } else {
+          const invalidInputs = document.querySelectorAll("input");
+          invalidInputs.forEach((input) => {
+            if (input.value.trim() === "") {
+              input.classList.add("is-invalid");
+            } else {
+              input.classList.remove("is-invalid");
+            }
+          });
+        }
+      });
+
+      // Tampilkan data saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", () => {
+        bahan.tampilkanDataTabel("TabelDataBahan");
+      });
+    </script>
+
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="assets/js/kaiadmin.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="assets/js/setting-demo.js"></script>
+    <script src="assets/js/demo.js"></script>
+    <script>
+      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#177dff",
+        fillColor: "rgba(23, 125, 255, 0.14)",
+      });
+
+      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#f3545d",
+        fillColor: "rgba(243, 84, 93, .14)",
+      });
+
+      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#ffa534",
+        fillColor: "rgba(255, 165, 52, .14)",
+      });
+    </script>
+  </body>
+</html>

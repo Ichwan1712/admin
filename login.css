@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+:root {
+  --primary: #744d26;
+  --bg: #010101;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("bglogin.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.navbar .navbar-logo span {
+  color: wheat;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.navbar .navbar-nav a:hover {
+  color: wheat;
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5em;
+  border-bottom: 0.1rem solid wheat;
+  transform: scaleX(0);
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+.navbar .navbar-extra a:hover {
+  color: wheat;
+}
+
+#hamburger {
+  display: none;
+}
+
+/* form login */
+.wrapper {
+  width: 420px;
+  color: #fff;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 20px 30px;
+  margin: 20px;
+  margin-top: 3.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  font-size: 18px;
+  padding: 0 20px;
+  color: #fff;
+}
+.input-box input::placeholder {
+  color: #fff;
+}
+.input-box .box-user,
+.input-box .box-lock {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.wrapper .remember-forgot {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+.wrapper .btn {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  margin: 30px 0;
+  transition: 0.3s;
+}
+.wrapper .btn:hover {
+  background: transparent;
+  color: #fff;
+}
+.wrapper .registrasi-link {
+  font-size: 14px;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+.registrasi-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.registrasi-link p a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: var(--primary);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5em;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a:after {
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .wrapper {
+    width: 90%;
+  }
+}

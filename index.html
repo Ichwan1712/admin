@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | KedaiTIK</title>
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      .loading-spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        border-top: 3px solid #fff;
+        animation: spin 1s linear infinite;
+        vertical-align: middle;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="loginForm">
+        <h1>Login</h1>
+        <div class="input-box">
+          <input type="text" id="username" placeholder="Username" required />
+          <i class="box-user" data-feather="user"></i>
+        </div>
+        <div class="input-box">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <i class="box-lock" data-feather="lock"></i>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" />Remember me</label>
+          <a href="#">Forgot Password</a>
+        </div>
+        <button type="submit" class="btn" id="loginButton">Login</button>
+        <div class="registrasi-link">
+          <p>Don't have an account? <a href="#">Registrasi</a></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const loginButton = document.getElementById("loginButton");
+
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Add loading spinner to button
+        loginButton.disabled = true; // Disable button during loading
+        loginButton.innerHTML =
+          '<span class="loading-spinner"></span> Loading...';
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Simulate a loading process (e.g., server response)
+        setTimeout(() => {
+          if (username === "barista" && password === "1234") {
+            window.location.href = "indexbarista.html";
+          } else if (username === "kasir" && password === "1234") {
+            window.location.href = "indexkasir.html";
+          } else {
+            alert("Username atau password salah!");
+            loginButton.disabled = false;
+            loginButton.innerHTML = "Login";
+          }
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
